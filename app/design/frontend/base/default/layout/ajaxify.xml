@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+<!-- DO NOT EDIT THIS -->
+<default>
+	<reference name="head">
+		<block type= "ajaxify/ajaxify" name="ajaxify.js"/>
+	</reference>
+	<reference name="after_body_start">
+		<block type="core/template" name="ajaxify.message" template="ajaxify/message.phtml"/>
+	</reference>
+</default>
+
+<!-- DO NOT EDIT THIS -->
+<ajaxify_all>
+	<label>Ajaxify Wrapper For all Response</label>
+    <reference name="root">
+     	<action method="setTemplate"><template>ajaxify/wrapper.phtml</template></action>
+    </reference>
+</ajaxify_all>
+
+
+<!-- This is an example implemenation for cart sidebar response/update -->
+
+<!-- 
+	It's actually simple to update any content. Just copy what layout block you want to get response of and paste inside
+	this reference content. 
+	
+	Do not forget to add <update handle="ajaxify_all"/>
+ -->
+<ajaxify_index_test>
+	
+	<update handle="ajaxify_all"/> <!-- This is always required. -->
+	
+	<reference name="content">
+		<block type="checkout/cart_sidebar" name="cart_sidebar" template="checkout/cart/sidebar.phtml" before="-">
+	            <action method="addItemRender"><type>simple</type><block>checkout/cart_item_renderer</block><template>checkout/cart/sidebar/default.phtml</template></action>
+	            <action method="addItemRender"><type>grouped</type><block>checkout/cart_item_renderer_grouped</block><template>checkout/cart/sidebar/default.phtml</template></action>
+	            <action method="addItemRender"><type>configurable</type><block>checkout/cart_item_renderer_configurable</block><template>checkout/cart/sidebar/default.phtml</template></action>
+	            <block type="core/text_list" name="cart_sidebar.extra_actions" as="extra_actions" translate="label" module="checkout">
+	                <label>Shopping Cart Sidebar Extra Actions</label>
+	            </block>
+        </block>
+	</reference>
+</ajaxify_index_test>
+
+</layout>

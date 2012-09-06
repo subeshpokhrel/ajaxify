@@ -1,0 +1,92 @@
+<script>
+var floatingMenu = Class.create({
+	initialize : function(elm, options) {
+		elm.each(function(elm){
+			var menu = elm;
+			var topOfMenu = menu.cumulativeOffset().top;
+			Event.observe(window,'scroll', function(evt) {
+				var y = document.viewport.getScrollOffsets().top;
+				if (y >= topOfMenu) {
+					menu.addClassName('fixed');
+				} else {
+					menu.removeClassName('fixed');
+				}
+			});
+		}.bind(this));
+		
+		this.options = Object.extend({}, options || {});
+
+	}
+	
+});
+
+document.observe("dom:loaded", function() {
+	new floatingMenu($$('.floating_message'));
+});
+</script>
+<style>
+.fixed{
+	position: fixed!important;
+	top:0;
+	width:100%;
+}
+.sp_message {
+	text-align: center;
+}
+
+.floating_message {
+
+}
+.sp_close {
+	font-weight:bold;
+	float: right;
+	position: fixed!important;
+	top: 12px;
+	right: 1px;
+	margin-top:-12px;
+	padding-left: 2px;
+	padding-right: 2px;
+	text-decoration: none;
+	display: block;
+	cursor: pointer;
+}
+
+
+#sp-loading {
+  width: 100%;
+  height: 100%;
+  top: 0px;
+  left: 0px;
+  position: fixed;
+  display: none;
+  opacity: 0.5;
+  background-color: #fff;
+  z-index: 99;
+  text-align: center;
+}
+
+.sp-loading-image {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 100;
+}
+
+</style>
+
+<div class="floating_message" id="sp_ajaxify_message_container" style="display:none;">
+	<div class="sp_message" id="sp_ajaxify_message"></div>
+	<div id="sp_close" class="sp_close">X</div>
+</div>
+
+<script>
+	$('sp_close').observe('click', function() {
+		$('sp_ajaxify_message_container').hide();
+	});
+</script>
+
+<div id="sp-loading">
+ <img class="sp-loading-image" src="<?php echo Mage::getBaseUrl('skin') ?>frontend/base/default/images/sp_loader.gif"/>;
+</div>
+
+
