@@ -1,7 +1,7 @@
 Ajaxify
 =======
 
-Ajaxify helpes the developer to simplify the usage of Ajax on a Magento plateform.
+Ajaxify helpes the developer to simplify the usage of Ajax on a Magento platform.
 
 I’ve tried to make the module simple for now, which of course can be extended a lot to incorporate all kinds of needs. 
 But for now, if I may say, there are roughly these two things you might want to do (Purely in Magento terms).
