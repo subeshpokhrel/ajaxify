@@ -10,9 +10,9 @@ app/code/core/
 app/design/adminhtml/default/default/template/*
 app/design/adminhtml/default/default/layout/*
 app/design/adminhtml/default/find/
-app/design/frontend/base/
 !app/design/frontend/base/default/layout/ajaxify.xml
 !app/design/frontend/base/default/template/ajaxify
+app/design/frontend/base/
 app/design/frontend/default/blank/
 app/design/frontend/default/default/
 app/design/frontend/default/iphone/
