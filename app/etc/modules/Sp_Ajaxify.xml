@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Sp_Ajaxify>
+            <active>true</active>
+            <codePool>local</codePool>
+        </Sp_Ajaxify>
+    </modules>
+</config> 

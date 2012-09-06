@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<source>
+	<import>
+		<catalog>
+            <category file="category.csv"></category>
+            <product file="product.csv"></product>
+		</catalog>
+	</import>
+</source>
