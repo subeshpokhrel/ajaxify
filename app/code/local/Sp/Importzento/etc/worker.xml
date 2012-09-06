@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<workers>
-    <import>
-        <catalog>
-            <category model="importzento/worker_category"></category>
-        </catalog>
-    </import>
-</workers>
