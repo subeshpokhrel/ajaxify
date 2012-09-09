@@ -19,6 +19,13 @@ class Sp_Ajaxify_IndexController extends Mage_Core_Controller_Front_Action
         }
     }
 
+    public function cartAction()
+    {
+        $id = $this->getRequest()->getParam('productId');
+        echo $id;
+
+    }
+
 
     /**
      * Always use this session to set your error or success message
