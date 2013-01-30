@@ -12,3 +12,5 @@ But for now, if I may say, there are roughly these two things you might want to 
 
 This module has been devised just to meet these two actions. In addition, the module is loader ready and has by default 
 a floating message block.
+
+[UPDATE] Wiki Update <a href="https://github.com/subeshpokhrel/ajaxify/wiki/Usage"> How to use </a>
